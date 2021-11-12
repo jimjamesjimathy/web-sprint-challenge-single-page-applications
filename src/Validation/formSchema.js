@@ -6,17 +6,10 @@ const formSchema = yup.object().shape({
         .string()
         .required('Gotta type something in here, buddy.')
         .min(2, 'name must be at least 2 characters'),
-    lastName: yup
-        .string()
-        .required('Gotta type something in here, buddy.')
-        .min(2, 'name must be at least 2 characters'),
-    email: yup
-        .string()
-        .required('Gimme an email, buddy.'),
     size: yup
     .string()
     .oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge'], 'Gotta pick one, buddy.'),
-    specialInstructions: yup.string().trim(),
+    spec: yup.string(),
 
     pepperoni: yup.boolean(),
     chicken: yup.boolean(),

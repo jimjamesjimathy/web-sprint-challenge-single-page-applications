@@ -4,8 +4,6 @@ import formSchema from "../Validation/formSchema";
 import * as yup from 'yup';
 import axios from "axios";
 
-
-
 const initialFormValues = {
     name: '',
     lastName: '',
@@ -17,15 +15,12 @@ const initialFormValues = {
     bellPepper: false,
     jalapeno: false,
     xtraCheese: false,
-    specialInstructions: ''
+    spec: '',
 }
-
-
 
 function PizzaForm() {
     const [order, setOrder] = useState(initialFormValues);
     const [isValid, setIsValid] = useState(true);
-
     const [varError, setError] = useState({
         firstName: '',
         size: '',
@@ -35,7 +30,7 @@ function PizzaForm() {
         bellPepper: '',
         jalapeno: '',
         xtraCheese: '',
-        specialInstructions: ''
+        spec: '',
     })
 
     useEffect(() => {
@@ -44,17 +39,11 @@ function PizzaForm() {
         }, [order]);
 
     const validate = (event) => {
-        yup.reach(formSchema, event.target.name)
-            .validate(event.target.value)
-            .then(res => {
-                setError({...varError, [event.target.name]: ""})
-
-            })
-            .catch(error => {
-                console.error(error)
-                setError({...varError, [event.target.name]: error.errors[0]})
-            })
-    };
+        yup.reach(formSchema, event.target.name).validate(event.target.value)
+          .then(() => setError({ ...varError, [event.target.name]: '' }))
+          .catch(err => setError({...varError, [event.target.name]: err.errors[0]}))
+          console.log(event)
+      }
 
     const changeHandler = event => {
         event.persist();
@@ -76,6 +65,7 @@ function PizzaForm() {
     return(
             <div className='form-wrapper' onSubmit={submitHandler}>
                 <Link to='/'><button id='home-button'>Home</button></Link>
+                <div className='errors'>{varError.name}</div>
                 <form id='pizza-form'>
                     <label><h3>First Name: </h3>
                     <div className='name-wrap'>
@@ -162,10 +152,10 @@ function PizzaForm() {
                         <label htmlFor="specialInstructions">Special Instructions:
                         <div className='inst-wrap'>
                     <textarea
-                        name="specialInstructions"
+                        name="spec"
                         id="special-text"
                         placeholder="Instructions Here"
-                        value={order.specialInstructions}
+                        value={order.spec}
                         onChange={changeHandler}
                     />
                     </div>
