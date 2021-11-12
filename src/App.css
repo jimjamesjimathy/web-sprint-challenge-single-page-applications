@@ -1,38 +1,110 @@
-.App {
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  background-image: url('./Assets/Pizza.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+/* Set base font size for all elemnts */
+html {
+  font-size: 62.5%;
+}
+.hero-header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header-text {
+  background-color: #664147;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1% 0;
+}
+.hero-header h1 {
+  font-size: 7rem;
+  color: #E5F9E0;
+  letter-spacing: .55rem;
+  text-shadow: 1px 1px 1px black;
+}
+.hero-header p {
+  font-size: 2.75rem;
+  color: black;
+  font-style: italic;
+}
+.home-page {
+  height: 100vh;
+  width: 100%;
+}
+nav {
+  width: 100%;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #2F9C95;
+}
+button {
+  width: 15vw;
+  height: 3vh;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: .2rem;
+}
+
+
+
+
+
+.form-wrapper {
+  width: 50%;
+  margin-top: 3%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#pizza-form {
+  background-color: rgba(229, 249, 224, 0.7);
+  height: 85vh;
+  width: 100%;
+  padding: 0 15%;
+  text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: space-around;
+  font-size: 3rem;
 }
