@@ -67,14 +67,15 @@ function PizzaForm() {
                 <Link to='/'><button id='home-button'>Home</button></Link>
                 <div className='errors'>{varError.name}</div>
                 <form id='pizza-form'>
-                    <label><h3>First Name: </h3>
+                    <label>
                     <div className='name-wrap'>
+                    <h3>Name: </h3>
                         <input
                             type='text'
                             id='name-input'
                             name='name'
                             required='required'
-                            placeholder='First Name'
+                            placeholder='Name'
                             minLength={2}
                             value={order.name}
                             onChange={changeHandler}
@@ -82,8 +83,9 @@ function PizzaForm() {
                         </div>
                     </label>
 
-                    <label><h3>Choose Pizza Size!</h3>
+                    <label>
                     <div className='size-wrap'>
+                    <h3>Choose Pizza Size! </h3>
                         <select name='size' value={order.size} id='size-dropdown' onChange={changeHandler}>
                             <option>Select a Pizza size!</option>
                             <option value='small'>Small - 12"</option>
@@ -96,8 +98,8 @@ function PizzaForm() {
                     </label>
 
                     <label htmlFor='toppings'>
-                        <h3>Select your toppings!</h3>
                         <div className='toppings-wrap'>
+                        <div className='select'>Select your toppings! </div>
                         <p>Pepperoni</p>
                         <input
                             id='toppings'
@@ -149,8 +151,9 @@ function PizzaForm() {
                         </div>
                     </label>
 
-                        <label htmlFor="specialInstructions">Special Instructions:
+                        <label htmlFor="specialInstructions">
                         <div className='inst-wrap'>
+                            <h3>Special Instructions: </h3>
                     <textarea
                         name="spec"
                         id="special-text"
